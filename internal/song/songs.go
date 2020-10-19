@@ -31,6 +31,7 @@ func OpenInfo(item string) *SongInfo {
         if _, err := toml.DecodeReader(f,&si); err != nil {
                 log.Panic(err)
         }
+	f.Close()
 	return &si
 }
 
